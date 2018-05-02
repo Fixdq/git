@@ -1,0 +1,89 @@
+查看git的版本号
+$ git --version
+
+
+开始Git之前，需要设置一下Git的环境变量，这个设置是一次性的工作。即这些设置会在全局文件（用户主目录下的.gitconfig）或系统文件（/etc/gitconfig）中做永久的记录。
+
+$ git config --global user.name "Jiang Xin"
+$ git config --global user.email jiangxin@ossxp.com
+
+删除Git全局配置文件中关于user.name和user.email的设置：
+
+$ git config --unset --global user.name
+$ git config --unset --global user.email
+
+
+
+git 设置别名
+如果拥有系统管理员权限（可以执行sudo命令），希望注册的命令别名能够被所有用户使用
+
+$ sudo git config --system alias.br branch
+$ sudo git config --system alias.ci "commit -s"
+$ sudo git config --system alias.co checkout
+$ sudo git config --system alias.st "-p status"
+
+
+只在本用户的全局配置中添加Git命令别名
+
+$ git config --global alias.st status
+$ git config --global alias.ci "commit -s"
+$ git config --global alias.co checkout
+$ git config --global alias.br branch
+
+
+创建版本库（在工作区的根目录执行命令）
+会在工作区的根目录下生成一个 .git 目录
+
+git init
+
+
+
+提交文件
+
+git add <文件名称>
+
+
+git grep命令来搜索工作区的文件内容
+
+$ git grep "工作区文件内容搜索"
+
+
+
+查看Git版本库的位置，以及工作区的根目录
+
+显示版本库.git目录所在的位置。
+$ git rev-parse --git-dir
+
+显示工作区根目录。
+$ git rev-parse --show-toplevel
+
+相对于工作区根目录的相对目录。
+$ git rev-parse --show-prefix
+
+显示从当前目录（cd）后退（up）到工作区的根的深度。
+$ git rev-parse --show-cdup
+
+
+
+git config 命令
+Git的三个配置文件分别是版本库级别的配置文件、全局配置文件（用户主目录下）和系统级配置文件（/etc目录下）。其中版本库级别配置文件的优先级最高，全局配置文件其次，系统级配置文件优先级最低。这样的优先级设置就可以让版本库.git目录下的config文件中的配置可以覆盖用户主目录下的Git环境配置。而用户主目录下的配置也可以覆盖系统的Git配置文件。
+
+.git/config文件进行编辑。
+
+$ git config -e
+
+
+.gitconfig（用户主目录下的.gitconfig文件）全局配置文件进行编辑。
+
+$ git config -e --global
+
+
+
+执行下面的命令，将打开/etc/gitconfig系统级配置文件进行编辑。
+
+如果Git安装在/usr/local/bin下，这个系统级的配置文件也可能是在/usr/local/etc/gitconfig。
+
+$ git config -e --system
+
+
+
