@@ -4,3 +4,26 @@ git config --global core.quotepath false  //支持utf-8编码
 git config --global user.name username
 git config --global user.email address@email.com
 -----------------------系统配置------------------------------------
+
+-----------------------Git文件忽略功能------------------------------
+当对工作区某个目录或者某些文件设置了忽略后，再执行git status查看状态时，
+被忽略的文件即使存在也不会显示为未跟踪状态，甚至根本感觉不到这些文件的存在
+
+通常的操作
+在.git 同目录下 创建 .gitignore
+$ touch .gitignore
+$ vim .gitignore
+
+把要忽略的文件写在其中，文件名可以使用通配符
+常用配置信息：
+/build
+/.idea
+/.gradle
+/local.properties
+
+如果不想把 .gitignore 添加到版本库里，
+也不希望 .gitignore 文件带来干扰，可以在文件中忽略自己
+.gitignore
+
+
+-----------------------------------------------------------------
