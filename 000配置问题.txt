@@ -1,0 +1,6 @@
+-----------------------系统配置------------------------------------
+git config --global color.ui true  //开启颜色支持
+git config --global core.quotepath false  //支持utf-8编码
+git config --global user.name username
+git config --global user.email address@email.com
+-----------------------系统配置------------------------------------
