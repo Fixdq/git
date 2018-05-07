@@ -1,0 +1,15 @@
+
+$git add  将工作区改动提交到暂存区， 暂存区的目录树刷新
+$git commit  将暂存区的目录树写到版本库，master分支会做相应的更新
+$git reset HEAD 暂存区的目录树会被master分支执行的目录树替换，工作区不受影响
+$git rm -cache<file>  直接从暂存区删除文件，工作区不作出改变
+$git checkout . 或 git checkout -<file> 会用暂存区全部或指定的文件替换工作区的文件，这个操作会清除工作区未添加到暂存区的改动
+$git checkout HEAD . 或 git checkout HEAD -<file> 用HEAD指向的分支或指定文件，替换暂存区和工作区的的文件，同时将暂存区和工作区没有提交的改动清除
+
+Git Diff    比较部分
+
+$git clean -fd 清除当前工作区没有加入版本库的文件和目录
+$git diff 工作区和暂存区的比较
+$git diff --cached 或者 $git diff --cached HEAD  暂存区和HEAD比较
+$git diff HEAD 或者 $git diff master 工作区和HEAD的比较
+$git stash  保存当前的进度
