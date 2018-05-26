@@ -1,3 +1,4 @@
+安装配置git 参考：000配置问题.txt
 
 操作步骤
 mkdir TTS
@@ -9,4 +10,11 @@ git add .	#添加文件到本地仓库
 git commit -m'first commit'	#提交文件到本地仓库
 git remote add origin git@github.com:Fixdq/TTS.git #把本地仓库和远程库关联起来
 git push -u origin master	#推送本地库到远程库
+
+
+注意：
+
+在关联本地仓库与远程仓库前，需要在远程端创建空白仓库，以供本地仓库与远程仓库建立联系
+不然会提示 ERROR: Repository not found.
+
 
