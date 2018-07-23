@@ -5,7 +5,7 @@ mkdir TTS
 cd TTS
 touch README.md
 touch .gitignore
-git init git 	#初始化本地仓库
+git init 	#初始化本地仓库
 git add .	#添加文件到本地仓库
 git commit -m'first commit'	#提交文件到本地仓库
 git remote add origin git@github.com:Fixdq/TTS.git #把本地仓库和远程库关联起来
